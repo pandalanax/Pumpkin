@@ -18,7 +18,7 @@ RUN --mount=type=cache,sharing=private,target=/pumpkin/target \
 FROM alpine:3.22
 
 COPY --from=builder /pumpkin/pumpkin.release /bin/pumpkin
-COPY --from=builder /pumpkin/assets /pumpkin/assets
+COPY --from=builder /pumpkin/assets /assets
 
 # set workdir to /pumpkin, this is required to influence the PWD environment variable
 # it allows for bind mounting the server files without overwriting the pumpkin
